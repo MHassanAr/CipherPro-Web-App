@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherPro | Text Encryption App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Decorative elements -->
+        <div class="cipher-decoration cipher-decoration-1"></div>
+        <div class="cipher-decoration cipher-decoration-2"></div>
+
+        <h1>CipherPro</h1>
+
+        <div class="form-group">
+            <label for="plaintext">Input Text</label>
+            <textarea id="plaintext" placeholder="Enter your text here to encrypt or decrypt..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="algorithm">Encryption Algorithm</label>
+            <select id="algorithm">
+                <option value="">-- Select Algorithm --</option>
+                <option value="caesar">Caesar Cipher</option>
+                <option value="aes">AES</option>
+                <option value="base64">Base64</option>
+                <option value="sha256">SHA-256 (Hash)</option>
+                <option value="rsa">RSA</option>
+                <option value="fernet">Fernet</option>
+            </select>
+        </div>
+
+        <div class="buttons">
+            <button id="encrypt-btn">Encrypt</button>
+            <button id="decrypt-btn">Decrypt</button>
+        </div>
+
+        <div class="form-group result-container">
+            <label for="result">Result</label>
+            <textarea id="result" readonly></textarea>
+            <button id="copy-btn">Copy</button>
+        </div>
+
+        <div id="error-message" class="error hidden"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
